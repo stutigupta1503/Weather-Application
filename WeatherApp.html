@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <section class="container">
+
+<!-- Weather search box -->
+    <form class="weather-header">
+        <div class="search-box">
+            <!-- icon from fontawesome.com -->
+          <i class="fa-solid fa-magnifying-glass" style="color: rgb(177, 151, 252);"></i>
+            <!-- text -->
+            <input type="text" class="city-name" placeholder="Search your city...">    
+        </div>
+    </form>
+
+<!-- Weather info -->
+    <div class="weather-body">
+        <h1 class="weather-city">Muradnagar,UP</h1>
+        
+        <p class="weather-date-time">23/06/26 5:00pm</p>
+        <div class="weather-data">
+            <p class="weather-forecast">Rain</p>
+            <div class="weather-icon"></div>
+        </div>
+        <p class="weather-temperature">29</p>
+        <div class="weather-min-max">
+            <p class="weather-min">12</p>
+            <p class="weather-max">24</p>
+        </div>
+    </div>
+
+<!-- Extra info about weather -->
+    <section class="weather-info">
+        <!-- Feels Like -->
+        <div class="weather-card">
+            <i class="fa-solid fa-temperature-full" style="color: rgb(177, 151, 252);"></i>
+            <div>
+                <p>Feels like</p>
+                <p class="weather-feelsLike"></p>
+            </div>
+        </div>
+        <!-- Humidity -->
+        <div class="weather-card">
+            <i class="fa-solid fa-droplet" style="color: rgb(177, 151, 252);"></i>
+            <div>
+                <p>Humidity</p>
+                <p class="weather-humidity"></p>
+            </div>
+        </div>
+        <!-- Wind -->
+        <div class="weather-card">
+            <i class="fa-solid fa-wind" style="color: rgb(177, 151, 252);"></i>
+            <div>
+                <p>Wind</p>
+                <p class="weather-wind"></p>
+            </div>
+        </div>
+        <!-- Pressure -->
+        <div class="weather-card">
+            <i class="fa-sharp fa-solid fa-gauge-high" style="color: rgb(177, 151, 252);"></i>
+            <div>
+                <p>Pressure</p>
+                <p class="weather-pressure"></p>
+            </div>
+        </div>
+    </section>    
+   </section>
+</body>
+</html>
