@@ -37,13 +37,20 @@ const getDateTime = (dt) => {
 let city = 'pune';
 
 // search functionality
-
+citySearch.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let city_name = document.querySelector(".city-name");
+    city = city_name.value;
+    getWeatherData();
+    city_name.value = "";
+})
 
 
 
 const getWeatherData = async () => {
     // current weather data
-    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}`;
+
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${config.API_KEY}`;
     try {
         const res = await fetch(weatherUrl);
         const data = await res.json();
@@ -55,7 +62,8 @@ const getWeatherData = async () => {
         dateTime.innerHTML = `${getDateTime(dt)}`;
 
         w_forecast.innerHTML = `${weather[0].main}`;
-        w_icon.innerHTML = `<img src="https://openweathermap.org/payload/api/media/file/${weather[0].icon}@2x.png"></img>`
+      
+        w_icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${weather[0].icon}@2x.png" alt="weather icon">`;
 
         w_temperature.innerHTML = `${main.temp}&#176`;
         w_minTemp.innerHTML = `Min: ${main.temp_min.toFixed()}&#176`;
